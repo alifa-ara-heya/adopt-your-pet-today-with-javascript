@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-theme='light'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Pet</title>
+    <!-- lato font from google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/2a5d2a1714.js" crossorigin="anonymous"></script>
+
+    <!-- daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0E7A81',
+                    },
+                    fontFamily: {
+                        lato: "Lato",
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-lato">
+    <header class="w-11/12 mx-auto py-5">
+        <!-- nav section -->
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content bg-primary/90 rounded-box z-[1] mt-3 w-32 p-2 shadow text-white">
+                        <li><a>Home</a></li>
+                        <li><a>Shop</a></li>
+                        <li><a>Contact</a></li>
+                    </ul>
+                </div>
+                <img src="./images/logo.webp" alt="pet shop logo">
+                <a class="btn btn-ghost font-black text-4xl">Peddy</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a>Home</a></li>
+                    <li><a>Shop</a></li>
+                    <li><a>Contact</a></li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <i class="fa-regular fa-user border rounded-full p-3 border-gray-300 inline-block"></i>
+            </div>
+        </div>
+
+        <!-- banner section -->
+        <div class="space-y-5 text-center md:w-2/3 lg:w-[752px] mx-auto pt-5">
+            <h3 class="font-bold text-2xl text-gray-600 flex gap-3 items-center justify-center leading-loose">Bringing
+                Families Together
+                <img src="./images/icons8-fire-48.png" class="w-8 h-8" alt="">
+            </h3>
+            <h1 class="font-black text-5xl md:text-7xl md:leading-[88px]">Your Path to Adoption Starts Here</h1>
+            <p class="text-gray-900">At Peddy, we are passionate about uniting families with their new best friends. Our
+                adoption process is designed to be simple, transparent, and filled with care, ensuring that every pet
+                finds the loving home they deserve.</p>
+            <button class="btn bg-primary text-white hover:text-black"><a href="#adopt-your-best-friend">View More</a></button>
+            <img src="./images/pet.webp" alt="pet">
+        </div>
+    </header>
+
+    <main class="w-11/12 mx-auto py-5">
+        <!-- pet category section -->
+        <section id="adopt-your-best-friend">
+            <div class="text-center space-y-5 md:w-2/3 lg:w-[752px] mx-auto">
+                <h2 class="font-black text-4xl md:text-5xl ">Adopt Your Best Friend</h2>
+                <p class=" text-gray-900">Adopting a pet is more than just adding a furry friend to your home - it's
+                    about creating lifelong bonds and cherished memories. Let us help you take the first step in this
+                    beautiful journey.</p>
+            </div>
+            <!-- api category section starts -->
+
+            <div id="pet-category-container" class="py-5 flex flex-wrap gap-4 items-center justify-center">
+                <!-- the buttons will go here -->
+
+            </div>
+            <!-- api category section ends -->
+        </section>
+
+        <!-- spinner section -->
+        <section id="spinner" class=" justify-center hidden">
+            <span class="loading loading-bars loading-lg"></span>
+        </section>
+
+        <!-- best deals -->
+        <section class="py-8">
+            <div class="flex items-center justify-between pb-5">
+                <h2 class="font-bold text-2xl">Best Deals For You</h2>
+                <button id="sort-btn" class="btn bg-primary text-white">Sort by Price</button>
+            </div>
+
+
+
+            <div id="animals-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- deal card -->
+                <div class="col-span-1 lg:col-span-3">
+                    <div id="deal-card-container" class="grid gap-5 grid-cols-1 lg:grid-cols-3">
+                        <!-- all pets api content goes here -->
+                    </div>
+                </div>
+                <div class="border rounded-xl col-span-1">
+                    <!-- deals photos -->
+                    <div id="deal-photo-container" class="grid p-5 gap-3 grid-cols-2">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- details modal section -->
+        <!-- Open the modal using ID.showModal() method -->
+        <section id="details-modal-container">
+            <!-- <button class="btn" onclick="my_details_modal.showModal()">open modal</button> -->
+           
+        </section>
+
+        <section id="adoption-modal">
+
+        </section>
+
+    </main>
+
+
+    <footer class="bg-black">
+        <footer class="footer text-white p-10 w-11/12 mx-auto py-12">
+            <nav>
+                <h6 class="footer-title capitalize opacity-90 flex items-center gap-3 text-3xl">
+                    <img src="./images/logo.webp" alt="">Peddy
+                </h6>
+                <a class="link link-hover opacity-30">Location: Washington 165, NY CA 54003
+                </a>
+                <a class="link link-hover opacity-30">Phone: +31 85 964 47 25</a>
+                <a class="link link-hover opacity-30">Email: info@yourdomain.com</a>
+                <a class="link link-hover opacity-30">Openings hours: 9.00 AM - 5.00 PM</a>
+                <div class="flex items-center">
+                    <img src="https://img.icons8.com/?size=48&id=118497&format=png" alt="facebook">
+                    <img class="w-8 h-8" src="./images/icons8-x-40.png" alt="X">
+                    <img src="https://img.icons8.com/?size=48&id=19318&format=png" alt="youtube">
+                    <img src="https://img.icons8.com/?size=48&id=Xy10Jcu1L2Su&format=png" alt="instagram">
+                </div>
+
+            </nav>
+            <nav>
+                <h6 class="footer-title capitalize opacity-90">Useful Links</h6>
+                <a class="link link-hover opacity-30">Home</a>
+                <a class="link link-hover opacity-30">About us</a>
+                <a class="link link-hover opacity-30">Animals</a>
+                <a class="link link-hover opacity-30">Foundation</a>
+                <a class="link link-hover opacity-30">Contact</a>
+            </nav>
+            <form>
+                <h6 class="footer-title opacity-90 capitalize">Drop a Message</h6>
+                <fieldset class="form-control w-80">
+
+                    <div class="flex flex-col space-y-5">
+                        <input type="text" placeholder="Enter your email" class="input input-bordered " />
+                        <button class="btn btn-primary bg-primary text-white">Subscribe</button>
+                    </div>
+                </fieldset>
+            </form>
+        </footer>
+    </footer>
+
+
+
+    <!-- js script -->
+    <script src="./scripts/app.js"></script>
+</body>
+
+</html>
